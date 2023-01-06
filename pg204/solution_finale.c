@@ -47,7 +47,7 @@ void* philosophe (void * num) {
     if(baguette[G] == libre && baguette[D] == libre) { 
             baguette[G] = occupe; 
 	    baguette[D] = occupe; 
-	    sem_post(&mutex);//toutes les baguetteettes sont occupees.
+	    sem_post(&mutex);//toutes les baguettes(parties) sont occupees.
 	    nb--; 
 	    printf("philosophe [%d] mange\n", i); 
 	    sleep (1); //manger           
