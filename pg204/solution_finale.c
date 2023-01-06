@@ -4,7 +4,7 @@
 #include <semaphore.h>
 
 #define N 5  //nbr de philosophes        
-#define G (i+1)%N   //baguette partie gauche du philosophe i
+#define G (N+i-1)%N   //baguette partie gauche du philosophe i
 #define D i         //baguette partie droite du philosphe i
 #define libre 1 
 #define occupe 0 
@@ -42,7 +42,7 @@ void* philosophe (void * num) {
   int i = *(int*) num, nb = 2;
   while (nb) { 
     sleep (1);//penser           
-    sem_wait(&mutex); //essayer de prendre les baguetteettes pour manger
+    sem_wait(&mutex); //essayer de prendre les baguettes pour manger
     //bloquer le fait de faire cette action de la part des autres philosophes.
     if(baguette[G] == libre && baguette[D] == libre) { 
             baguette[G] = occupe; 

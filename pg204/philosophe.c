@@ -4,7 +4,7 @@
 #include <semaphore.h>
 
 #define N 5  //nbr de philosophes        
-#define G (i+1)%N   //fourchette gauche du philosophe i
+#define G (N+i-1)%N   //fourchette gauche du philosophe i
 #define D i         //fourchette droite du philosphe i
 #define libre 1 
 #define occupe 0 
