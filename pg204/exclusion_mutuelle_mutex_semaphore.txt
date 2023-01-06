@@ -1,0 +1,15 @@
+#include <semaphore.h>
+
+//...
+
+sem_t semaphore;
+
+sem_init(&semaphore, 0, 1);
+
+sem_wait(&semaphore);
+// section critique
+sem_post(&semaphore);
+
+sem_destroy(&semaphore);
+
+<=>mutex.(PTHREAD_MUTEX_INITIALIZER)
